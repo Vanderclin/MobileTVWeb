@@ -1,0 +1,398 @@
+@font-face {
+    font-family: 'Cuprum-Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Cuprum-Regular'), url('../assets/fonts/Cuprum-Regular.ttf') format('truetype');
+}
+
+html,
+body {
+    font-size: 14px;
+    background-color: #303030;
+    font-family: Cuprum-Regular;
+    color: #ffffff;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.alignment {
+    vertical-align: bottom;
+}
+
+.card {
+  display: grid;
+  background-color: #343a40;
+  height: auto;
+  margin: 3px;
+  padding: 6px;
+  width: 120px;
+  z-index: 5;
+ 
+}
+
+.card img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  width: 90px;
+}
+
+.card h6 {
+  text-align: center;
+}
+
+.card button {
+  display: block;
+  margin: 0 auto;
+}
+
+.container {
+    max-width: 960px;
+}
+
+.btn-group-fab {
+    position: fixed;
+    width: 50px;
+    height: auto;
+    right: 20px;
+    bottom: 16.1px;
+    z-index: 1000;
+}
+
+.btn-group-fab div {
+    position: relative;
+    width: 100%;
+    height: auto
+}
+
+.btn-group-fab .btn {
+    position: absolute;
+    bottom: 0;
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 4px;
+    width: 40px;
+    height: 40px;
+    margin: 4px auto
+}
+
+.btn-group-fab .btn-main {
+    width: 60px;
+    height: 60px;
+    right: 50%;
+    margin-right: -25px;
+    z-index: 0;
+    background: #35363A;
+}
+
+.parent {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.form {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+.form img {
+    display: flex;
+    margin: 0 auto;
+}
+
+.form .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form .form-control:focus {
+    z-index: 2;
+}
+
+.form input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.form input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.home-header {
+    max-width: 700px;
+}
+
+.jumbotron {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.jumbotron h1 {
+    text-align: center;
+}
+
+.line {
+    border-bottom: solid 1px #f8f9fa;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.modal-content {
+    border-radius: 9px;
+}
+
+.modal-dark {
+    width: 100%;
+    background-color: #35363A;
+    border: solid 2px #3C4043;
+    border-radius: 8px;
+}
+
+
+.swiper-container {
+    height: auto;
+    justify-content: center;
+    width: 100%;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+
+}
+
+.offcanvas-collapse {
+    position: fixed;
+    top: 56px;
+    bottom: 0;
+    right: 100%;
+    left: -300px;
+    width: 300px;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    overflow-y: auto;
+    visibility: hidden;
+    background-color: #343a40;
+    transition-timing-function: ease-in-out;
+    transition-duration: .3s;
+    transition-property: left, visibility;
+}
+
+.offcanvas-collapse {
+    align-items: start;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding;
+    background-clip: padding-box;
+    border-top: 5px solid rgba(0, 0, , 0, 0.5);
+    border-right: 5px solid rgba(0, 0, 0, 0.5);
+    z-index: 2;
+
+}
+
+.offcanvas-collapse.open {
+    left: 0;
+    visibility: visible;
+}
+
+.navbar-expand-lg .navbar-nav {
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    color: rgba(255, 255, 255, .75);
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.nav-underline .nav-link {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: .875rem;
+    color: #6c757d;
+}
+
+.nav-underline .nav-link:hover {
+    color: #007bff;
+}
+
+.nav-underline .active {
+    font-weight: 500;
+    color: #343a40;
+}
+
+
+input#menu {
+    display: none;
+}
+
+.icon {
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+}
+
+label.icon {
+    z-index: 200;
+}
+
+.icon .menu,
+.icon .menu::before,
+.icon .menu::after {
+    background: #FFFFFF;
+    content: '';
+    display: block;
+    height: 2px;
+    position: absolute;
+    transition: background ease .3s, top ease .3s .3s, transform ease .3s;
+    width: 20px;
+}
+
+.icon:hover .menu,
+.icon:hover .menu::before,
+.icon:hover .menu::after {
+    background: #FFFFFF;
+}
+
+.icon .menu {
+    left: 18px;
+    top: 25px;
+}
+
+.icon .menu::before {
+    top: -6px;
+}
+
+.icon .menu::after {
+    top: 6px;
+}
+
+#menu:checked + .icon .menu {
+    background: transparent;
+}
+
+#menu:checked + .icon .menu::before {
+    transform: rotate(45deg);
+}
+
+#menu:checked + .icon .menu::after {
+    transform: rotate(-45deg);
+}
+
+#menu:checked + .icon .menu::before,
+#menu:checked + .icon .menu::after {
+    top: 0;
+    transition: top ease .3s, transform ease .3s .3s;
+}
+
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+
+
+
+
+.page-splash {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    padding: 10px 10px 10px 10px;
+    width: 100%;
+    height: 100%;
+    background-color: #343A40;
+    z-index: 10000;
+    position: fixed;
+    color: white;
+}
+
+video {
+  object-fit: scale-down;
+  background-color: #343a40;
+}

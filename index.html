@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Vanderclin Rocha">
+    <meta name="description" content="Rede de fornecimento, entrega e distribuição de conteúdo">
+    <meta name="keywords" content="Game Acarde">
+    <meta name="theme-color" content="#343A40">
+
+    <title>MobileTV</title>
+
+    <link rel="canonical" href="index.html">
+    <link rel="icon" href="assets/favicon/favicon.ico">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/customization.css" rel="stylesheet">
+	  
+	<link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
+	<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  </head>
+
+  <body onplay="counter_fn()">
+    <section class="page-splash" id="page-splash">
+	  <div class="parent">
+		<form class="form fade-in" id="form-signin">
+		  <img class="img-fluid mb-3" src="assets/images/logo_normal_inside.png" width="72">
+		  <input type="email" id="email" class="form-control" placeholder="E-mail" required autofocus>
+		  <input type="password" id="password" class="form-control" placeholder="Senha" required>
+		  <button id="quickstart-sign-in" class="btn btn-md mx-auto btn-block btn-outline-light" onclick="signIn()">Entrar</button>
+		  <div class="d-flex">
+			<span class="mx-auto mt-3 mb-0 text-light text-center">&copy; MobileTV</span>
+		  </div>
+		</form>
+	  </div>
+    </section>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <input class="mx-1" type="checkbox" id="menu" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	  <label for="menu" class="icon mx-1">
+		<div class="menu"></div>
+	  </label>
+	  <a class="navbar-brand mr-auto" href="#">
+		<img src="assets/images/logo_normal_inside.png" width="30" height="30" class="d-inline-block align-top" alt="">
+		MobileTV
+	  </a>
+	  <button class="btn btn-sm mx-1 btn-outline-light " type="button" id="btn-sign-out" onclick="signOut()">Sair</button>
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+		  <li class="nav-item active">
+			<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Download</a>
+		  </li>
+		</ul>
+	  </div>
+	</nav>
+	
+	<div class="embed-responsive embed-responsive-16by9 sticky-top ">
+	  <video src="assets/videos/loop.mp4" autoplay loop id="change" controls class="embed-responsive-item" allowfullscreen>
+	  </video>
+	</div>
+
+    <div class="container">
+
+	  <div class="row justify-content-center mt-3" id="channels_post">
+	  </div>
+
+	  <div class="btn-group-fab hide" role="group" aria-label="Floating Action Button" id="floatingActionButton">
+		<div>
+		  <button class="btn btn-main btn-dark" onclick="setValue()"><img class="img-fluid" src="assets/images/arrow-counter-clockwise.svg"></button>
+		</div>
+	  </div>
+    </div>
+
+    <div class="modal fade" id="modal_update_user" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm modal-dialog-centered">
+		<div class="modal-content mx-3">
+		  <div class="modal-body modal-dark">
+			<form class="form fade-in">
+			  <input type="text" id="input_user_name" name="input_user_name" maxlength="16" class="form-control" placeholder="Nome do usuário" required autofocus>
+			  <button class="btn btn-md mx-auto btn-block btn-outline-light mt-3" disabled id="buttonUpdate" onclick="updateProfile()">Atualizar</button>
+			  <div class="collapse">
+				<div class="d-flex mt-3">
+				  <span class="small mx-auto my-auto">Número máximo de caracteres atingido</span>
+				</div>
+			  </div>
+			</form>
+		  </div>
+		</div>
+	  </div>
+    </div>
+
+    <script src="js/vendor/jquery.slim.min.js"></script>
+    <script src="js/vendor/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/customization.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-storage.js"></script>
+    <script src="js/firebase/firebase-app.js"></script>
+
+  </body></html>

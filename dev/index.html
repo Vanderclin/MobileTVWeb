@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Vanderclin Rocha">
+    <meta name="description" content="Rede de fornecimento, entrega e distribuição de conteúdo">
+    <meta name="keywords" content="Minilab's CDN">
+    <meta name="theme-color" content="#343A40">
+
+    <title>Minilab's | CDN</title>
+
+    <link rel="canonical" href="index.html">
+    <link rel="icon" href="../assets/favicon/favicon.ico">
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/customization.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  </head>
+
+  <body onload="check()">
+
+    <nav class="navbar navbar-dark bg-dark">
+	  <input type="checkbox" id="menu">
+	  <label for="menu" class="icon">
+		<div class="menu"></div>
+	  </label>
+	  <a class="navbar-brand ml-3 mr-auto" href="#">
+		<img src="../assets/favicon/favicon.ico" width="30" height="30" class="d-inline-block align-top img-fluid img-thumbnail rounded" alt="" loading="lazy"><b class="alignment ml12"> Minilab's | CDN</b>
+	  </a>
+
+	  <div class="navbar-collapse offcanvas-collapse">
+		<ul class="navbar-nav mr-auto">
+		  <li class="nav-item">
+			<a class="nav-link" href="/">Ínicio <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="/">Baixar</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="/">Aplicativo</a>
+		  </li>
+		  <li class="nav-item active">
+			<a class="nav-link" href="admin/" target="_blank">Desenvolvedor</a>
+		  </li>
+		  <li class="nav-item mt-5">
+			<button class="btn btn-sm btn-block btn-outline-light hide" type="button" id="btn-sign-in" onclick="formSignIn()">Entrar</button>
+			<button class="btn btn-sm btn-block btn-outline-light hide" type="button" id="btn-sign-out" onclick="signOut()">Sair</button>
+		  </li>
+		</ul>
+	  </div>
+    </nav>
+
+    <div class="container">
+
+	  <div class="home-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+		<div class="swiper-container">
+		  <div class="swiper-wrapper">
+			<div class="swiper-slide">
+			  <img src="../assets/images/1078161.jpg" class="img-fluid rounded" alt="Responsive image">
+			</div>
+			<div class="swiper-slide">
+			  <img src="../assets/images/1078301.jpg" class="img-fluid rounded" alt="Responsive image">
+			</div>
+			<div class="swiper-slide">
+			  <img src="../assets/images/1078158.jpg" class="img-fluid rounded" alt="Responsive image">
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+	  <div class="row justify-content-center mt-3">
+
+		<div class="card">
+		  <div class="card-body">
+			<h5 class="card-title text-center">Vivo Cloud</h5>
+			<ul class="list-unstyled my-auto">
+			  <li>Criado: 15/08/2020</li>
+			  <li>Expira: 18/08/2020</li>
+			  <li>Limite: 50 Downloads</li>
+			</ul>
+		  </div>
+		  <div class="card-footer">
+			<form method="get" action="https://cdn.minilabs.ml/assets/files/VivoCloud.ehi">
+			  <button class="btn btn-sm btn-block btn-outline-light" type="submit" disabled id="button-download">
+				Baixar
+				<span class="badge badge-light" id="badge-value">0</span>
+			  </button>
+			</form>
+			<div class="mt-2">
+			  <div class="collapse mt-1 text-center" id="collapseExample">
+				<h6 class="small p-2 mb-0">Limite de 50 downloads atingido</h6>
+			  </div>
+			</div>
+		  </div>
+		</div>
+
+	  </div>
+
+	  <div class="btn-group-fab hide" role="group" aria-label="Floating Action Button" id="floatingActionButton">
+		<div>
+		  <button class="btn btn-main btn-dark" onclick="setValue()"><img class="img-fluid" src="assets/images/arrow-counter-clockwise.svg"></button>
+		</div>
+	  </div>
+    </div>
+
+
+
+
+    <div class="modal fade" id="modal_sign_in" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm modal-dialog-centered">
+		<div class="modal-content mx-3">
+		  <div class="modal-body modal-dark">
+			<form class="form fade-in" id="form-signin">
+			  <h3 class="text-light text-center mb-4">Administração</h3>
+			  <input type="email" id="email" class="form-control" placeholder="E-mail" required autofocus>
+			  <input type="password" id="password" class="form-control" placeholder="Senha" required>
+			  <button id="quickstart-sign-in" class="btn btn-md mx-auto btn-block btn-outline-light" onclick="signIn()">Entrar</button>
+			  <div class="d-flex">
+				<span class="mx-auto mt-3 mb-0 text-light text-center">&copy; Minilab's | CDN 2019-2020</span>
+			  </div>
+			</form>
+		  </div>
+		</div>
+	  </div>
+    </div>
+
+    <script src="../js/vendor/jquery.slim.min.js"></script>
+    <script src="../js/vendor/popper.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/customization.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-storage.js"></script>
+    <script src="../js/firebase/firebase-app.js"></script>
+
+  </body>
+
+</html>
