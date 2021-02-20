@@ -112,7 +112,7 @@ function startView() {
 			var address = snapshot.child("address").val();
 
 			if (snapshot.child("thumbnail").val() === "") {
-				thumbnail = "../../assets/images/logo_transparent_inside.png";
+				thumbnail = "https://vanderclin.github.io/MobileTVWeb/assets/images/logo_transparent_inside.png";
 			} else {
 				thumbnail = snapshot.child("thumbnail").val();
 			}
