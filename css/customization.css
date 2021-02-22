@@ -24,21 +24,23 @@ body {
 }
 
 .card {
+  border-radius: 3px;
   display: grid;
   background-color: #343a40;
-  height: auto;
+  border: solid 1px #ffffff;
+  height: 180;
   margin: 3px;
-  padding: 6px;
   width: 120px;
   z-index: 5;
  
 }
 
 .card img {
+  border-radius: 3px;
   display: block;
-  height: auto;
+  height: 100%;
   margin: 0 auto;
-  width: 90px;
+  width: 100%;
 }
 
 .card h6 {
@@ -162,6 +164,10 @@ body {
     background-color: #35363A;
     border: solid 2px #3C4043;
     border-radius: 8px;
+}
+
+.modal-footer {
+  border-top: 2px solid #3C4043;
 }
 
 
@@ -395,4 +401,40 @@ label.icon {
 video {
   object-fit: scale-down;
   background-color: #343a40;
+}
+
+.border-bottom {
+  background-color: #fff;
+}
+
+.image-size {
+  border-radius:5px;
+  height:180px;
+  width:120px;
+}
+
+.scroll {
+    color: #fff;
+    font-size: 9pt;
+    overflow-y: auto;
+    height: 90px
+}
+
+.scroll::-webkit-scrollbar {
+    width: 6px
+}
+
+.scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+    border: solid 1px #fff
+}
+
+.scroll::-webkit-scrollbar-thumb:hover {
+    background: #555
 }
