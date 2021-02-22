@@ -110,18 +110,18 @@ function startView() {
 			var thumbnail;
 			var title = snapshot.child("title").val();
 			var address = snapshot.child("address").val();
+			var key = snapshot.child('key').val();
 
 			if (snapshot.child("thumbnail").val() === "") {
-				thumbnail = "https://vanderclin.github.io/MobileTVWeb/assets/images/logo_transparent_inside.png";
+				thumbnail = "assets/images/logo_empty.png";
 			} else {
 				thumbnail = snapshot.child("thumbnail").val();
 			}
 
 			var channels =
 				"<div class='card'>" +
-				"<img src='" + thumbnail + "'/>" +
-				"<h6 class='small'>" + snapshot.child('title').val() + "</h6>" +
-				"<button class='btn btn-sm btn-block btn-outline-light' onClick='change(`" + snapshot.child("address").val() + "`)'>Assistir</button>" +
+				"<img data-toggle='modal' data-target='#myModal' src='" + thumbnail + "' id='" + snapshot.child('key').val() + "' onClick='viewContent(this.id)'/>" +
+				"<h6 class='hide'>'"+snapshot.child('title').val()+"'</h6>"+
 				"</div>";
 
 
@@ -131,4 +131,21 @@ function startView() {
 		});
 
 	});
+}
+
+function viewContent(clicked_id) {
+	firebase.database().ref('channels').child(clicked_id).once('value', function (snapshot) {
+		if (snapshot.child('thumbnail').val() === "") {
+			document.getElementById('movie_thumbnail').src="assets/images/logo_empty.png";
+		}
+		else {
+			document.getElementById('movie_thumbnail').src=snapshot.child('thumbnail').val();
+		}
+		
+		document.getElementById('movie_title').innerText = "Filme: " + snapshot.child('title').val();
+		document.getElementById('movie_description').innerText = snapshot.child('description').val();
+		$('#watching').click(function(e){
+			document.getElementById('change').src = snapshot.child('address').val();
+		});
+	 });
 }
