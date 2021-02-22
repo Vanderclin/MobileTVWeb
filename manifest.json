@@ -1,0 +1,20 @@
+{
+   "background_color": "#343A40",
+   "display": "standalone",
+   "icons": [
+      {
+         "sizes": "192x192",
+         "src": "assets/favicon/android-chrome-192x192.png",
+         "type": "image/png"
+      },
+      {
+         "sizes": "512x512",
+         "src": "assets/favicon/android-chrome-512x512.png",
+         "type": "image/png"
+      }
+   ],
+   "name": "MobileTV",
+   "short_name": "MobileTV",
+   "theme_color": "#343A40",
+   "start_url": "https://app.mobiletv.ml/?pwa_launcher=true"
+}

@@ -5,32 +5,34 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="Vanderclin Rocha">
-    <meta name="description" content="Rede de fornecimento, entrega e distribuição de conteúdo">
+    <meta name="author" content="Movies Library">
+    <meta name="description" content="O melhor conteúdo você encontra aqui...">
     <meta name="keywords" content="Game Acarde">
     <meta name="theme-color" content="#343A40">
 
-    <title>MobileTV</title>
+    <title>Movies Library</title>
 
     <link rel="canonical" href="index.html">
-    <link rel="icon" href="assets/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+	<link rel="manifest" href="manifest.json">
+
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/customization.css" rel="stylesheet">
-	  
-	<link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
-	<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
   </head>
 
-  <body onplay="counter_fn()">
+  <body onplay="counter_fn()" onload="start()">
     <section class="page-splash" id="page-splash">
 	  <div class="parent">
 		<form class="form fade-in" id="form-signin">
-		  <img class="img-fluid mb-3" src="assets/images/logo_normal_inside.png" width="72">
+		  <img class="img-fluid mb-3" src="assets/images/logo_normal_inside.png" width="72"/>
 		  <input type="email" id="email" class="form-control" placeholder="E-mail" required autofocus>
 		  <input type="password" id="password" class="form-control" placeholder="Senha" required>
 		  <button id="quickstart-sign-in" class="btn btn-md mx-auto btn-block btn-outline-light" onclick="signIn()">Entrar</button>
 		  <div class="d-flex">
-			<span class="mx-auto mt-3 mb-0 text-light text-center">&copy; MobileTV</span>
+			<span class="mx-auto mt-3 mb-0 text-light text-center">&copy; Movies Library</span>
 		  </div>
 		</form>
 	  </div>
@@ -43,9 +45,11 @@
 	  </label>
 	  <a class="navbar-brand mr-auto" href="#">
 		<img src="assets/images/logo_normal_inside.png" width="30" height="30" class="d-inline-block align-top" alt="">
-		MobileTV
+		<b>Movies Library</b>
 	  </a>
-	  <button class="btn btn-sm mx-1 btn-outline-light " type="button" id="btn-sign-out" onclick="signOut()">Sair</button>
+	  <form class="d-flex ms-auto">
+		<input class="form-control me-2" type="search" id="searchbox" placeholder="Buscar" aria-label="Search">
+	  </form>
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
 		  <li class="nav-item active">
@@ -55,18 +59,16 @@
 			<a class="nav-link" href="#">Download</a>
 		  </li>
 		</ul>
+		<button class="btn btn-sm btn-outline-light ml-auto" type="button" id="btn-sign-out" onclick="signOut()">Sair</button>
 	  </div>
+	  
 	</nav>
-	
-	<div class="embed-responsive embed-responsive-16by9 sticky-top ">
-	  <video src="assets/videos/loop.mp4" autoplay loop id="change" controls class="embed-responsive-item" allowfullscreen>
+	<div class="embed-responsive embed-responsive-16by9 border-bottom sticky-top">
+	  <video controlsList="nodownload" poster="assets/videos/loop.mp4" autoplay loop allowfullscreen controls id="change" class="embed-responsive-item" poster="placeholder.png">
 	  </video>
 	</div>
-
     <div class="container">
-
-	  <div class="row justify-content-center mt-3" id="channels_post">
-	  </div>
+	  <div class="row justify-content-center mt-3" id="channels_post"></div>
 
 	  <div class="btn-group-fab hide" role="group" aria-label="Floating Action Button" id="floatingActionButton">
 		<div>
@@ -92,6 +94,37 @@
 		</div>
 	  </div>
     </div>
+
+
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+		<div class="modal-content modal-dark">
+		  <div class="modal-body">
+			<div class="row">
+			  <div class="w-auto">
+				<img src="assets/images/logo_normal_inside.png" class="mx-3 image-size" id="movie_thumbnail"/>
+			  </div>
+			  <div class="w-50">
+				<h5 class="text-left" id="movie_title">Modal title</h5>
+				<h5 class="text-left">Ano: 2020</h5>
+				<h5 class="text-left">Diretor: Fulano</h5>
+				<h5 class="text-left">Genero: Ficção</h5>
+			  </div>
+			</div>
+			<div>
+			  <h5 class="mt-1">Sinopse</h5>
+			  <p class="lead scroll" id="movie_description"></p>
+
+			</div>
+
+		  </div>
+		  <div class="modal-footer" id="modal_fotter_content">
+			<button class='btn btn-outline-light' data-dismiss='modal' id="closer">Fechar</button>
+			<button class='btn btn-outline-light' data-dismiss='modal' id="watching">Assistir</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
 
     <script src="js/vendor/jquery.slim.min.js"></script>
     <script src="js/vendor/popper.min.js"></script>
