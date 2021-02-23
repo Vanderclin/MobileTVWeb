@@ -120,8 +120,8 @@ function startView() {
 
 			var channels =
 				"<div class='card'>" +
-				"<img data-toggle='modal' data-target='#myModal' src='" + thumbnail + "' id='" + snapshot.child('key').val() + "' onClick='viewContent(this.id)'/>" +
-				"<h6 class='hide'>'"+snapshot.child('title').val()+"'</h6>"+
+				"<img src='" + thumbnail + "' id='" + snapshot.child('key').val() + "' onClick='viewContent(this.id)'/>" +
+				"<h6 class='hide'>'" + snapshot.child('title').val() + "'</h6>" +
 				"</div>";
 
 
@@ -134,18 +134,18 @@ function startView() {
 }
 
 function viewContent(clicked_id) {
+	$('#myModal').modal('show');
 	firebase.database().ref('channels').child(clicked_id).once('value', function (snapshot) {
 		if (snapshot.child('thumbnail').val() === "") {
-			document.getElementById('movie_thumbnail').src="assets/images/logo_empty.png";
+			document.getElementById('m_thumbnail').src = "assets/images/logo_empty.png";
+		} else {
+			document.getElementById('m_thumbnail').src = snapshot.child('thumbnail').val();
 		}
-		else {
-			document.getElementById('movie_thumbnail').src=snapshot.child('thumbnail').val();
-		}
-		
-		document.getElementById('movie_title').innerText = "Filme: " + snapshot.child('title').val();
-		document.getElementById('movie_description').innerText = snapshot.child('description').val();
-		$('#watching').click(function(e){
+
+		document.getElementById('m_title').innerText = "Filme: " + snapshot.child('title').val();
+		document.getElementById('m_description').innerText = snapshot.child('description').val();
+		$('#watching').click(function (e) {
 			document.getElementById('change').src = snapshot.child('address').val();
 		});
-	 });
+	});
 }

@@ -61,7 +61,7 @@ body {
     width: 50px;
     height: auto;
     right: 20px;
-    bottom: 16.1px;
+    bottom: 16px;
     z-index: 1000;
 }
 
@@ -83,12 +83,13 @@ body {
 }
 
 .btn-group-fab .btn-main {
-    width: 60px;
-    height: 60px;
-    right: 50%;
-    margin-right: -25px;
-    z-index: 0;
-    background: #35363A;
+  background: #343a40;
+  border: solid 1px #ffffff;
+  width: 60px;
+  height: 60px;
+  right: 50%;
+  margin-right: -25px;
+  z-index: 0;
 }
 
 .parent {
@@ -438,3 +439,15 @@ video {
 .scroll::-webkit-scrollbar-thumb:hover {
     background: #555
 }
+
+.marquee {
+  background-color: #343a40;
+  height: 30px;
+  z-index:100;
+}
+.marquee > .status {
+  line-height: 30px;
+  display: block;
+}
+
+

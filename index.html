@@ -61,21 +61,24 @@
 		</ul>
 		<button class="btn btn-sm btn-outline-light ml-auto" type="button" id="btn-sign-out" onclick="signOut()">Sair</button>
 	  </div>
-	  
+
 	</nav>
-	<div class="embed-responsive embed-responsive-16by9 border-bottom sticky-top">
-	  <video controlsList="nodownload" poster="assets/videos/loop.mp4" autoplay loop allowfullscreen controls id="change" class="embed-responsive-item" poster="placeholder.png">
+	<div class="embed-responsive embed-responsive-16by9 border-bottom sticky-top collapse" id="video-content">
+	  <video controlsList="nodownload" src="assets/videos/loop.mp4" autoplay allowfullscreen controls id="change" class="embed-responsive-item" poster="placeholder.png">
 	  </video>
 	</div>
     <div class="container">
 	  <div class="row justify-content-center mt-3" id="channels_post"></div>
 
-	  <div class="btn-group-fab hide" role="group" aria-label="Floating Action Button" id="floatingActionButton">
+	  <div class="btn-group-fab" role="group" aria-label="Floating Action Button" id="floatingActionButton">
 		<div>
-		  <button class="btn btn-main btn-dark" onclick="setValue()"><img class="img-fluid" src="assets/images/arrow-counter-clockwise.svg"></button>
+		  <button class="btn btn-main btn-dark" onclick="setValue()"><img class="img-fluid" src="assets/images/icon_plus.png"></button>
 		</div>
 	  </div>
     </div>
+	<div class="marquee fixed-bottom">
+	  <span class="status text-center">Em breve um novo aplicativo para Android™ | Novos filmes serão adicionados em breve.</span>
+	</div>
 
     <div class="modal fade" id="modal_update_user" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-sm modal-dialog-centered">
@@ -102,25 +105,25 @@
 		  <div class="modal-body">
 			<div class="row">
 			  <div class="w-auto">
-				<img src="assets/images/logo_normal_inside.png" class="mx-3 image-size" id="movie_thumbnail"/>
+				<img src="assets/images/logo_normal_inside.png" class="mx-3 image-size" id="m_thumbnail"/>
 			  </div>
 			  <div class="w-50">
-				<h5 class="text-left" id="movie_title">Modal title</h5>
-				<h5 class="text-left">Ano: 2020</h5>
-				<h5 class="text-left">Diretor: Fulano</h5>
-				<h5 class="text-left">Genero: Ficção</h5>
+				<h5 class="text-left" id="m_title">Modal title</h5>
+				<h6 class="text-left" id="m_year">Ano: 2020</h6>
+				<h6 class="text-left" id="m_director">Diretor: Fulano</h6>
+				<h6 class="text-left" id="m_genre">Genero: Ficção</h6>
 			  </div>
 			</div>
 			<div>
 			  <h5 class="mt-1">Sinopse</h5>
-			  <p class="lead scroll" id="movie_description"></p>
+			  <p class="lead scroll" id="m_description"></p>
 
 			</div>
 
 		  </div>
 		  <div class="modal-footer" id="modal_fotter_content">
 			<button class='btn btn-outline-light' data-dismiss='modal' id="closer">Fechar</button>
-			<button class='btn btn-outline-light' data-dismiss='modal' id="watching">Assistir</button>
+			<button class='btn btn-outline-light' data-dismiss='modal' id="watching" data-toggle="collapse" data-target="#video-content">Assistir</button>
 		  </div>
 		</div>
 	  </div>
