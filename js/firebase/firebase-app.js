@@ -70,11 +70,11 @@ function signIn() {
 			alert(errorMessage);
 		}
 		console.log(error);
-		document.getElementById('quickstart-sign-in').disabled = false;
+		document.getElementById('button-sign-in').disabled = false;
 		// [END_EXCLUDE]
 	});
 	// [END authwithemail]
-	document.getElementById('quickstart-sign-in').disabled = true;
+	document.getElementById('button-sign-in').disabled = true;
 
 }
 
@@ -134,7 +134,16 @@ function startView() {
 }
 
 function viewContent(clicked_id) {
+	var video = document.getElementById('change');
 	$('#myModal').modal('show');
+	if(!$('#video-content').hasClass('show')){
+	}
+	else {
+		$('#video-content').collapse('hide');
+		video.pause();
+		video.removeAttribute('src');
+		video.load();
+	}
 	firebase.database().ref('channels').child(clicked_id).once('value', function (snapshot) {
 		if (snapshot.child('thumbnail').val() === "") {
 			document.getElementById('m_thumbnail').src = "assets/images/logo_empty.png";
@@ -147,12 +156,15 @@ function viewContent(clicked_id) {
 		$('#watching').click(function (e) {
 			var player= document.getElementById('change');
 			player.src = snapshot.child('address').val();
+			$('#video-content').collapse('show');
 			player.play();
-		var vid = document.getElementById("change");
-		vid.onended = function() {
-			$('#video-content').collapse('hide');
-		};
 			
 		});
 	});
 }
+
+
+var vid = document.getElementById("change");
+vid.onended = function() {
+	$('#video-content').collapse('hide');
+};

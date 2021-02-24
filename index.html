@@ -8,11 +8,10 @@
     <meta name="author" content="Movies Library">
     <meta name="description" content="O melhor conteúdo você encontra aqui...">
     <meta name="keywords" content="Game Acarde">
-    <!--meta name="theme-color" content="#343A40"-->
-	<meta name="theme-color" content="#f00f00">
+	<meta name="theme-color" content="#343A40">
+	  
     <title>Movies Library</title>
-
-    <link rel="canonical" href="index.html">
+	
 	<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
@@ -30,7 +29,7 @@
 		  <img class="img-fluid mb-3" src="assets/images/logo_normal_inside.png" width="72"/>
 		  <input type="email" id="email" class="form-control" placeholder="E-mail" required autofocus>
 		  <input type="password" id="password" class="form-control" placeholder="Senha" required>
-		  <button id="quickstart-sign-in" class="btn btn-md mx-auto btn-block btn-outline-light" onclick="signIn()">Entrar</button>
+		  <button id="button-sign-in" class="btn btn-md mx-auto btn-block btn-outline-light" onclick="signIn()">Entrar</button>
 		  <div class="d-flex">
 			<span class="mx-auto mt-3 mb-0 text-light text-center">&copy; Movies Library</span>
 		  </div>
@@ -51,15 +50,16 @@
 		<input class="form-control me-2" type="search" id="searchbox" placeholder="Buscar" aria-label="Search">
 	  </form>
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<ul class="navbar-nav mr-auto">
-		  <li class="nav-item active">
-			<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="#">Download</a>
-		  </li>
-		</ul>
-		<button class="btn btn-sm btn-outline-light ml-auto" type="button" id="btn-sign-out" onclick="signOut()">Sair</button>
+		<div class="h-50 bg-warning">
+		  <div class="row">
+			<img class="img-fluid w-25" src="assets/images/animation.gif">
+			
+		  </div>
+		  
+		  <button class="btn btn-sm btn-outline-light ml-auto" type="button" id="btn-sign-out" onclick="signOut()">Sair</button>
+		  
+		</div>
+		
 	  </div>
 
 	</nav>
@@ -123,7 +123,7 @@
 		  </div>
 		  <div class="modal-footer" id="modal_fotter_content">
 			<button class='btn btn-outline-light' data-dismiss='modal' id="closer">Fechar</button>
-			<button class='btn btn-outline-light' data-dismiss='modal' id="watching" data-toggle="collapse" data-target="#video-content">Assistir</button>
+			<button class='btn btn-outline-light' data-dismiss='modal' id="watching">Assistir</button>
 		  </div>
 		</div>
 	  </div>
