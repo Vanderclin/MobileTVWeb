@@ -145,7 +145,14 @@ function viewContent(clicked_id) {
 		document.getElementById('m_title').innerText = "Filme: " + snapshot.child('title').val();
 		document.getElementById('m_description').innerText = snapshot.child('description').val();
 		$('#watching').click(function (e) {
-			document.getElementById('change').src = snapshot.child('address').val();
+			var player= document.getElementById('change');
+			player.src = snapshot.child('address').val();
+			player.play();
+		var vid = document.getElementById("change");
+		vid.onended = function() {
+			$('#video-content').collapse('hide');
+		};
+			
 		});
 	});
 }
