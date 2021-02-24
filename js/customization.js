@@ -52,7 +52,3 @@ var output = day  + ' / '+ month  + ' / ' + year;
 $( "#modal-content-movie" ).click(function() {
   alert( "Handler for .click() called." );
 });
-
-
-
- 

@@ -152,6 +152,9 @@ function viewContent(clicked_id) {
 		}
 
 		document.getElementById('m_title').innerText = "Filme: " + snapshot.child('title').val();
+		document.getElementById('m_year').innerText = "Ano: " + snapshot.child('year').val();
+		document.getElementById('m_genre').innerText = "Gênero: " + snapshot.child('genre').val();
+		document.getElementById('m_director').innerText = "Diretor: " + snapshot.child('director').val();
 		document.getElementById('m_description').innerText = snapshot.child('description').val();
 		$('#watching').click(function (e) {
 			var player= document.getElementById('change');

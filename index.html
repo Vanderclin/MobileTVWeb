@@ -9,9 +9,9 @@
     <meta name="description" content="O melhor conteúdo você encontra aqui...">
     <meta name="keywords" content="Game Acarde">
 	<meta name="theme-color" content="#343A40">
-	  
+
     <title>Movies Library</title>
-	
+
 	<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
@@ -19,7 +19,6 @@
 
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/customization.css" rel="stylesheet">
-
   </head>
 
   <body onplay="counter_fn()" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
@@ -53,13 +52,13 @@
 		<div class="h-50 bg-warning">
 		  <div class="row">
 			<img class="img-fluid w-25" src="assets/images/animation.gif">
-			
+
 		  </div>
-		  
+
 		  <button class="btn btn-sm btn-outline-light ml-auto" type="button" id="btn-sign-out" onclick="signOut()">Sair</button>
-		  
+
 		</div>
-		
+
 	  </div>
 
 	</nav>
@@ -77,7 +76,7 @@
 	  </div>
     </div>
 	<div class="marquee fixed-bottom">
-	  <span class="status text-center">Em breve um novo aplicativo para Android™ | Novos filmes serão adicionados em breve.</span>
+	  <span class="status text-center">Este site é um projeto de um desenvolvedor só, desenvolvido durante seu tempo livre.</span>
 	</div>
 
     <div class="modal fade" id="modal_update_user" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -108,16 +107,15 @@
 				<img src="assets/images/logo_normal_inside.png" class="mx-3 image-size" id="m_thumbnail"/>
 			  </div>
 			  <div class="w-50">
-				<h5 class="text-left" id="m_title">Modal title</h5>
-				<h6 class="text-left" id="m_year">Ano: 2020</h6>
-				<h6 class="text-left" id="m_director">Diretor: Fulano</h6>
-				<h6 class="text-left" id="m_genre">Genero: Ficção</h6>
+				<h5 class="text-left" id="m_title"></h5>
+				<h6 class="text-left small" id="m_year"></h6>
+				<h6 class="text-left small" id="m_genre"></h6>
+				<h6 class="text-left small" id="m_director"></h6>
 			  </div>
 			</div>
 			<div>
 			  <h5 class="mt-1">Sinopse</h5>
-			  <p class="lead scroll" id="m_description"></p>
-
+			  <h5 class="lead scroll" id="m_description"></h5>
 			</div>
 
 		  </div>

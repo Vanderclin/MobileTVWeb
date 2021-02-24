@@ -340,6 +340,7 @@ video {
     background: #555
 }
 
+
 .marquee {
   background-color: #343a40;
   height: 30px;
@@ -349,5 +350,13 @@ video {
   line-height: 30px;
   display: block;
 }
-
-
+/*
+.unknow {
+  width: 100%;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background: #ccc;
+}
+*/
